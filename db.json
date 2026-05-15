@@ -359,6 +359,14 @@
       "price": "100",
       "image": "https://test.com/img.png",
       "id": "iiZ5E5IJS3Y"
+    },
+    {
+      "title": "dd",
+      "description": "ddd",
+      "category": "dd",
+      "price": "2",
+      "image": "dd",
+      "id": "jfMreqkvX8A"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
