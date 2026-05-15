@@ -271,6 +271,94 @@
       "price": "33",
       "image": "3",
       "id": "YUbG5-ljTZ4"
+    },
+    {
+      "title": "Essence Mascara Lash Princess",
+      "description": "Volumizing and lengthening mascara for dramatic lashes.",
+      "category": "beauty",
+      "price": "10",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "id": "s1GnZS0aLC0"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "test",
+      "price": "10",
+      "image": "test.jpg",
+      "id": "sUY2Bz7zNfE"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "test",
+      "price": "10",
+      "image": "test.jpg",
+      "id": "wSHp7cAS2bA"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "W7_e_rjQeUM"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "dp1uRwN103Q"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "xVCgX4Vo_vM"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "JOxR1yeO_Sk"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "Ll0umuxRaGU"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "plk5MrCeTJM"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "t2fONRpdixw"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "iiZ5E5IJS3Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

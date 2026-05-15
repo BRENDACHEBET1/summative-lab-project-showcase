@@ -7,6 +7,7 @@ import AddProduct from './pages/AddProduct'
 import ProductList from './pages/ProductList'
 import Admin from './pages/Admin'
 import EditProduct from './pages/EditProduct'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
 
 
         </Routes>
+        <Footer/>
 
       </BrowserRouter>
     </>
