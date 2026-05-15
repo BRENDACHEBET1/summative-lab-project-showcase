@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import ProductCard from "../components/ProductCard";
+import { Outlet } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -24,6 +25,7 @@ const ProductList = () => {
 
     setProducts((prev) => prev.filter((p) => p.id !== id));
   };
+
   return (
      <div className="grid grid-cols-3 gap-4 p-4">
       {products.map((product) => (
@@ -33,6 +35,7 @@ const ProductList = () => {
           onDelete={deleteProduct}
         />
       ))}
+       
     </div>
     
   )
