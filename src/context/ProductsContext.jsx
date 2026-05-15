@@ -7,10 +7,11 @@ export const useProducts = () => useContext(ProductsContext);
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+ 
 
   const API = "http://localhost:3001/products";
 
-  // GET products
+  // GET products..READ
   const fetchProducts = async () => {
     const res = await fetch(API);
     const data = await res.json();
@@ -21,7 +22,7 @@ export const ProductsProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
-  // ADD product
+  // ADD product...CREATE
   const addProduct = async (product) => {
     const res = await fetch(API, {
       method: "POST",
@@ -34,7 +35,7 @@ export const ProductsProvider = ({ children }) => {
     setProducts((prev) => [...prev, newProduct]);
   };
 
-  // DELETE product
+  // DELETE product...DELETE
   const deleteProduct = async (id) => {
     await fetch(`${API}/${id}`, {
       method: "DELETE",
@@ -43,21 +44,35 @@ export const ProductsProvider = ({ children }) => {
     setProducts((prev) => prev.filter((p) => p.id !== id));
   };
 
-  // UPDATE product
+  // UPDATE product..UPDATE
   const updateProduct = async (id, updatedData) => {
     const res = await fetch(`${API}/${id}`, {
-      method: "PUT", // or PATCH
+      method: "PATCH", 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),
     });
 
     const updatedProduct = await res.json();
 
+
     setProducts((prev) =>
       prev.map((p) => (p.id === id ? updatedProduct : p))
     );
   };
 
+//   Filtering
+ const [input, setInput] = useState("")
+ const [selectedCategory, setSelectedCategory] = useState("all");
+
+const filteredProducts = products
+  .filter((product) =>
+    product.title.toLowerCase().includes(input.toLowerCase())
+  )
+  .filter((product) =>
+    selectedCategory === "all"
+      ? true
+      : product.category === selectedCategory
+  );
   return (
     <ProductsContext.Provider
       value={{
@@ -65,6 +80,11 @@ export const ProductsProvider = ({ children }) => {
         addProduct,
         deleteProduct,
         updateProduct,
+        filteredProducts, 
+        setInput,
+        input,
+        selectedCategory,
+        setSelectedCategory,
       }}
     >
       {children}
