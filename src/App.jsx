@@ -6,6 +6,7 @@ import About from './pages/About'
 import AddProduct from './pages/AddProduct'
 import ProductList from './pages/ProductList'
 import Admin from './pages/Admin'
+import EditProduct from './pages/EditProduct'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
           <Route path='/products' element={<ProductList />} />      
           <Route path='/admin' element={<Admin />} >
               <Route path='new' element={<AddProduct />} />
+              <Route path="edit/:id" element={<EditProduct />} />
           </Route>
            
           

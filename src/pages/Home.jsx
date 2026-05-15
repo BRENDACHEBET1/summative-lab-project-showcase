@@ -7,13 +7,13 @@ const Home = () => {
     const slides = [
     {
       image: slide1,
-      title: "Big Summer Sale",
-      subtitle: "Up to 50% off selected items"
+      title: "Admin Portal",
+      subtitle: "Monitor and manage all your products in one page"
     },
     {
       image: slide2,
-      title: "New Arrivals",
-      subtitle: "Fresh styles just dropped"
+      title: "Inventory management system",
+      subtitle: "Add, update and organize your store efficiently"
     }
   ];
 

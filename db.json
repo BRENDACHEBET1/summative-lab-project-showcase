@@ -10,11 +10,11 @@
     },
     {
       "id": "2",
-      "title": "Eyeshadow Palette with Mirror",
-      "description": "Versatile eyeshadow palette with built-in mirror.",
+      "title": "Essence Mascara Lash Princess",
+      "description": "Volumizing and lengthening mascara for dramatic lashes.",
       "category": "beauty",
-      "price": 19.99,
-      "image": "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp"
+      "price": "10",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
     },
     {
       "id": "3",

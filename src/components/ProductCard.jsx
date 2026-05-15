@@ -1,10 +1,12 @@
 import React from 'react'
 import { useProducts } from '../context/ProductsContext';
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaEdit } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 const ProductCard = ({product}) => {
     const {deleteProduct} = useProducts()
+    const navigate = useNavigate()
 
     const handleDelete = () =>{
         deleteProduct(product.id)
@@ -23,6 +25,11 @@ const ProductCard = ({product}) => {
       <h2 className=''>{product.category}</h2>
       <p>${product.price}</p>
       <button className='bg-blue-200 text-white px-3 py-1'>Add to Cart</button>
+      <button onClick={() => navigate(`/admin/edit/${product.id}`)}
+       className="relative top-2 right-10 text-blue-600"
+     >
+    <FaEdit />
+    </button>
       
      </div>
      
