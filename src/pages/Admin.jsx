@@ -5,16 +5,25 @@ import AddProduct from './AddProduct'
 
 const Admin = () => {
   return (
-    <div>
-         <div>
-        <h1 className='font-bold text-3xl text-center'>Admin Portal</h1>
-    </div>
-    <div>
-       <Link to="/admin/new" className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded"
-      > + Add Product
-      </Link> 
-    
-    </div>
+     <div className="min-h-screen bg-slate-50 py-10">
+
+      
+      <h1 className="font-bold text-3xl text-center mb-8">
+        Admin Portal
+      </h1>
+
+      {/*  Add Product */}
+      <div className="flex justify-center">
+        <Link
+          to="/admin/new"
+          className="w-64 sm:w-72 bg-white border border-gray-200 shadow-md rounded-xl p-6 text-center hover:shadow-lg hover:scale-105 transition duration-200"
+        >
+          <div className="text-4xl font-bold text-blue-600">+</div>
+          <p className="mt-2 font-semibold text-gray-700">
+            Add New Product
+          </p>
+        </Link>
+      </div>
     <Outlet/>
     </div>
    

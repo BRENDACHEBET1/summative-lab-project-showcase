@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer>
-         {/* ICONS */}
+      {/* ICONS */}
       <div className="fixed bottom-0 left-0 w-full bg-black text-white p-4 flex justify-center gap-10 mt-4 bg-slate-200 p-3">
 
         <a href="https://github.com" target="_blank" rel="noreferrer">
