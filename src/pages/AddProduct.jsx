@@ -72,7 +72,7 @@ const AddProduct = () => {
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white p-6 rounded-xl shadow"
       >
-        <h2 className="text-xl font-bold mb-4">Add Product</h2>
+        <h2 className="text-xl font-bold mb-4" data-testid="add-product-title">Add Product</h2>
 
         {/* TITLE */}
         <label htmlFor={titleId}>Title</label>
