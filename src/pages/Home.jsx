@@ -2,6 +2,7 @@ import React from 'react'
 import slide1 from "../images/inventory2.jpg";
 import slide2 from "../images/inventory1.jpg";
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const slides = [
@@ -45,7 +46,7 @@ const Home = () => {
         {/* OVERLAY */}
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white text-center">
 
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-7xl font-bold">
             {slides[index].title}
           </h1>
 
@@ -53,10 +54,11 @@ const Home = () => {
             {slides[index].subtitle}
           </p>
 
-          <button className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200">
-            Shop Now
+          <Link to ="/products">
+          <button className="mt-6 px-6 rounded-2xl py-3 bg-slate-300 text-black font-semibold rounded hover:bg-blue-200">
+            Products
           </button>
-
+          </Link>
         </div>
 
       </div>

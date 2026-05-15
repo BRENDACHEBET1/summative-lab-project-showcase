@@ -10,34 +10,34 @@ const ProductList = () => {
      const categories = ["all", "groceries", "beauty", "fragrances"];
 
     return (
-        <div>
-      {/* Search */}
+        <div className='min-h-screen bg-slate-200 py-10'>
+      {/* Searc component rendered on top */}
       <Search />
 
       {/* Toggle Button */}
       <div className="flex justify-center p-4">
         <button
           onClick={() => setShowCategories((prev) => !prev)}
-          className="px-5 py-2 bg-black text-white rounded"
+          className="px-5 py-2 bg-slate-600 rounded-2xl text-white rounded"
         >
           {showCategories ? "Hide Categories" : "Categories"}
         </button>
       </div>
 
-      {/* Category Buttons (toggle view) */}
+      {/* Category Buttons  */}
       {showCategories && (
         <div className="flex gap-3 justify-center p-4">
-          {categories.map((cat) => (
+          {categories.map((category) => (
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              key={category}
+              onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 border rounded ${
-                selectedCategory === cat
-                  ? "bg-black text-white"
-                  : "bg-white"
+                selectedCategory === category
+                  ? "bg-slate-800 text-white border-slate-800 rounded-2xl"
+                  : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 rounded-2xl"
               }`}
             >
-              {cat}
+              {category}
             </button>
           ))}
         </div>

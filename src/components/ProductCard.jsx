@@ -4,37 +4,54 @@ import { FaTrash, FaEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 
-const ProductCard = ({product}) => {
-    const {deleteProduct} = useProducts()
-    const navigate = useNavigate()
+const ProductCard = ({ product }) => {
+  const { deleteProduct } = useProducts()
+  const navigate = useNavigate()
 
-    const handleDelete = () =>{
-        deleteProduct(product.id)
-    }
-     return (
-    <div className='border p-3 rounded shadow w-full flex flex-col gap-4'>
-      <button onClick={handleDelete} className='relative rounded shadow flex flex-col gap-4'>
-         <FaTrash size={15} />
-      </button>
-      <h2>{product.title}</h2>
-      <div className='flex justify-center border border-gray-100'>
-         <img className=' w-1/2 ' src={product.image} alt={product.name} />
+  const handleDelete = () => {
+    deleteProduct(product.id)
+  }
+  return (
+    <div className='border border-gray-200 p-3 rounded shadow w-full flex flex-col gap-4 relative bg-white'>
+
+      {/* Product title */}
+      <h2 className='font-semibold'>{product.title}</h2>
+
+      {/* Image */}
+      <div className='flex justify-center border border-gray-100 p-2 rounded'>
+        <img className='w-1/2 object-contain' src={product.image} alt={product.name} />
       </div>
 
-     <div className='mt-6'>
-      <h2 className=''>{product.category}</h2>
-      <p>${product.price}</p>
-      <button className='bg-blue-200 text-white px-3 py-1'>Add to Cart</button>
-      <button onClick={() => navigate(`/admin/edit/${product.id}`)}
-       className="relative top-2 right-10 text-blue-600"
-     >
-    <FaEdit />
-    </button>
-      
-     </div>
-     
+      {/* Product info */}
+      <div className='mt-2'>
+        <h2 className='text-gray-600'>{product.category}</h2>
+        <p className='font-bold'>${product.price}</p>
+      </div>
 
+
+      <div className='flex justify-end items-center gap-4 mt-auto pt-3 '>
+
+        {/* Edit button, opens in admin page */}
+        <button
+          onClick={() => navigate(`/admin/edit/${product.id}`)}
+          className='p-2 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200 transition'
+        >
+          <FaEdit size={16} />
+        </button>
+
+        {/* Delete button */}
+        <button
+          onClick={handleDelete}
+          className='p-2 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition'
+        >
+          <FaTrash size={16} />
+        </button>
+
+      </div>
     </div>
+
+
+
   );
 }
 
