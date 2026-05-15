@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {useProducts} from "../context/ProductsContext"
 
 const AddProduct = () => {
   const navigate = useNavigate();
 
+//   state to hold form inputs
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -14,13 +16,14 @@ const AddProduct = () => {
 
   const [loading, setLoading] = useState(false);
 
+//   Function to handle change in form inputs
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
+// function to handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -30,21 +33,7 @@ const AddProduct = () => {
       id: Date.now()
     };
 
-    try {
-      const res = await fetch("http://localhost:3001/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newProduct)
-      });
-
-      if (!res.ok) {
-        throw new Error("Failed to add product");
-      }
-
-      await res.json();
-
+    
       // reset form
       setFormData({
         title: "",
@@ -57,11 +46,7 @@ const AddProduct = () => {
       // go back to products page
       navigate("/products");
 
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-      setLoading(false);
-    }
+   
   };
 
   return (

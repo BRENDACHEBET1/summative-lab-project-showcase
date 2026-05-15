@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductCard = ({product, onDelete}) => {
+const ProductCard = ({product}) => {
      return (
     <div className='border p-3 rounded shadow w-full flex flex-col gap-4'>
       <h2>{product.title}</h2>
