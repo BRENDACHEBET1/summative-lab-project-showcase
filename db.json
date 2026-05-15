@@ -271,6 +271,14 @@
       "price": "33",
       "image": "3",
       "id": "YUbG5-ljTZ4"
+    },
+    {
+      "title": "Essence Mascara Lash Princess",
+      "description": "Volumizing and lengthening mascara for dramatic lashes.",
+      "category": "beauty",
+      "price": "10",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp",
+      "id": "s1GnZS0aLC0"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
