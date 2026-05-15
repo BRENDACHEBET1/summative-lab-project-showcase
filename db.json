@@ -343,6 +343,22 @@
       "price": "100",
       "image": "https://test.com/img.png",
       "id": "plk5MrCeTJM"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "t2fONRpdixw"
+    },
+    {
+      "title": "Test Product",
+      "description": "Test Description",
+      "category": "Electronics",
+      "price": "100",
+      "image": "https://test.com/img.png",
+      "id": "iiZ5E5IJS3Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
