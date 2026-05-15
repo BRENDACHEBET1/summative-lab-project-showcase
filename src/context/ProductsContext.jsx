@@ -9,7 +9,8 @@ export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
  
 
-  const API = "http://localhost:3001/products";
+  const API =  import.meta.env.VITE_API_URL;
+  console.log("API:", API);
 
   // GET products..READ
   const fetchProducts = async () => {
