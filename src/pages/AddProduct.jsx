@@ -42,7 +42,6 @@ const AddProduct = () => {
             id: Date.now()
         };
 
-        try {
             await addProduct(newProduct)
 
             // reset form
@@ -56,11 +55,8 @@ const AddProduct = () => {
 
             // go back to products page
             navigate("/products");
-        } catch (error) {
-            console.log(error)
-        } finally {
             setLoading(false)
-        }
+        
     }
 
 

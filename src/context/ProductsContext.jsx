@@ -14,10 +14,22 @@ export const ProductsProvider = ({ children }) => {
 
   // GET products..READ
   const fetchProducts = async () => {
+    try {
     const res = await fetch(API);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
     const data = await res.json();
+
     setProducts(data);
-  };
+
+  } catch (error) {
+    console.log(error.message);
+  
+  }
+};
 
   useEffect(() => {
     fetchProducts();
@@ -25,41 +37,69 @@ export const ProductsProvider = ({ children }) => {
 
   // ADD product...CREATE
   const addProduct = async (product) => {
+    try {
     const res = await fetch(API, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(product),
     });
 
+    if (!res.ok) {
+      throw new Error("Failed to add product");
+    }
+
     const newProduct = await res.json();
 
+    // only update state if request succeeds..pessimistic rendering
     setProducts((prev) => [...prev, newProduct]);
+
+  } catch (error) {
+    console.log(error.message);
+  }
   };
 
   // DELETE product...DELETE
   const deleteProduct = async (id) => {
-    await fetch(`${API}/${id}`, {
+    try {
+    const res = await fetch(`${API}/${id}`, {
       method: "DELETE",
     });
 
-    setProducts((prev) => prev.filter((p) => p.id !== id));
-  };
+    if (!res.ok) {
+      throw new Error("Failed to delete product");
+    }
+
+    // only update state if delete succeeds..pessimistic rendering
+    setProducts((prev) => prev.filter((product) => product.id !== id));
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
   // UPDATE product..UPDATE
   const updateProduct = async (id, updatedData) => {
+     try {
     const res = await fetch(`${API}/${id}`, {
-      method: "PATCH", 
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedData),
     });
 
+    if (!res.ok) {
+      throw new Error("Failed to update product");
+    }
+
     const updatedProduct = await res.json();
 
-
     setProducts((prev) =>
-      prev.map((p) => (p.id === id ? updatedProduct : p))
+      prev.map((product) => (product.id ===  id ? updatedProduct : product))
     );
-  };
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 //   Filtering
  const [input, setInput] = useState("")
