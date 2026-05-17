@@ -8,7 +8,7 @@ const EditProduct = () => {
 
   const { products, updateProduct } = useProducts();
 
-  const product = products.find((p) => p.id == 1);
+  const product = products.find((product) => product.id == 1);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -24,15 +24,15 @@ const EditProduct = () => {
     }
   }, [product]);
 
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [event.target.name]: event.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     await updateProduct(id, formData);
 

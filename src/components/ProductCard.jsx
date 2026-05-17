@@ -8,21 +8,27 @@ const ProductCard = ({ product }) => {
   const { deleteProduct } = useProducts()
   const navigate = useNavigate()
 
-  const handleDelete = () => {
-    deleteProduct(product.id)
-  }
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this product?"
+    );
+
+    if (!confirmDelete) return;
+
+    await deleteProduct(id);
+  };
   return (
-    <div className='border border-gray-200 p-3 rounded shadow w-full flex flex-col gap-4 relative bg-white'>
+    <div className='border border-gray-200 p-3 rounded-2xl shadow w-full flex flex-col gap-4 relative bg-white'>
 
       {/* Product title */}
       <h2 className='font-semibold'>{product.title}</h2>
 
       {/* Image */}
-      <div className='flex justify-center border border-gray-100 p-2 rounded'>
-        <img className='w-1/2 object-contain' src={product.image} alt={product.name} />
+      <div className='w-full h-48 sm:h-52 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center border border-gray-100'>
+        <img className='w-full h-full object-contain p-3 transition-transform duration-300 hover:scale-105' src={product.image} alt={product.name} />
       </div>
 
-      {/* Product info */}
+      {/* Product setails */}
       <div className='mt-2'>
         <h2 className='text-gray-600'>{product.category}</h2>
         <p className='font-bold'>${product.price}</p>
@@ -41,7 +47,7 @@ const ProductCard = ({ product }) => {
 
         {/* Delete button */}
         <button
-          onClick={handleDelete}
+          onClick={() => handleDelete(product.id)}
           className='p-2 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition'
         >
           <FaTrash size={16} />
